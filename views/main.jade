@@ -1,0 +1,46 @@
+extends home
+block content
+    h4(class="text-center mb-5 text-uppercase text-black") Ejemplo de CRUD con Socket IO
+    .row
+        .col-sm-3
+            .card.border.border-dark
+                h4.card-title.text-center.my-3 Persona Nueva
+                .card-body
+                    form#formulario
+                        .form-group
+                            label(for="_id") ID
+                            input.form-control(type="text" placeholder="Id del usuario" id="_id")
+                        .form-group
+                            label(for="first_name") Nombres
+                            input(type="text" placeholder="Su nombre" class="form-control" id="first_name")
+                        .form-group
+                            label(for="last_name") Apellidos
+                            input(type="text" placeholder="Su apellidos" class="form-control" id="last_name")
+                        .form-group
+                            label(for="timezone") Regi&oacute;n
+                            input(type="text" placeholder="-5" class="form-control" id="timezone")
+                        .form-group
+                            label(for="locale") Idioma
+                            input(type="text" placeholder="Idioma de preferencia" class="form-control" id="locale")
+                        .form-group
+                            label(for="profile_pic") Foto
+                            input(type="text" placeholder="URL de foto" class="form-control" id="profile_pic")
+                        .form-group
+                            label(for="baseDatos") Guardar en la base de datos
+                            select#baseDatos.select.form-control.input-lg(form='addProperty' name='baseDatos')
+                                option(value='0', selected= true) Si
+                                option(value='1', selected= true) No
+                        button(type="submit"  style="margin-left:50px" class="btn btn-primary" ) Guardar
+        .col-sm-9
+            table.table.table-bordered.table-hover
+                thead.thead-dark
+                    tr
+                        th ID
+                        th Nombres
+                        th Apellidos
+                        th Zona Horaria
+                        th Idioma
+                        th Foto
+                        th Actualizar
+                        th Eliminar
+                tbody
